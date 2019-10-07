@@ -1,0 +1,6 @@
+A) O interfaces publicadas têm um processo específico para alteração de código, sendo necessária a criação de uma nova interface para qualquer mudança, pois depois de uma interface ser publicada, qualquer alteração por parte do desenvolvedor pode quebrá-la para os usuários, e isso inclui a refatoração. Já na interface pública isso não é um problema, visto que os métodos podem ser alterados a qualquer momento.
+
+
+B) Mudanças divergentes são no geral mudanças em uma classe realizadas de forma pontual. Essas mudanças podem acabar impactando em regras de negócio e/ou na persistência. Já na na cirurgia com rifle, por ser oposta a mudanças divergentes faz alterações que atingem várias classes dificilmente fazendo com que se encontre todas os lugares afetados.
+C) Falso, nem sempre a refatoração é recomendada pois a refatoração pode impactar no desempenho do código para que o mesmo seja mais efetivo.
+D) A refatoração só possui garantias em cima dos testes bem implementados para corroborar um bom código.
