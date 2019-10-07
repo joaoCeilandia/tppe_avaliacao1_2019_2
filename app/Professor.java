@@ -19,17 +19,23 @@ public class Professor {
 		
 		if (nome == null || nome.equalsIgnoreCase("") ||
 			matricula == null || matricula.equalsIgnoreCase("") || 
-			email == null || email.equalsIgnoreCase("")) {
-			StringBuilder builder = new StringBuilder();
-			builder.append("Dados informados para Professor estão incompletos:");
-			builder.append(nome == null ? "Nome: " + nome : null);
-			builder.append(matricula == null ? "Matricula: " + matricula : null);
-			builder.append(email == null ? "Email: " + email : null);
-			throw new DadosProfessorIncompletosException(builder.toString());
+			email == null || email.equalsIgnoreCase(""))
+		{
+			informaFaltaDeInformacoes(nome, matricula, email);
 		} else 
 			p = new Professor(nome, matricula, email);
 		
 		return p;
+	}
+
+	private static void informaFaltaDeInformacoes(String nome, String matricula, String email)
+			throws DadosProfessorIncompletosException {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Dados informados para Professor estão incompletos:");
+		builder.append(nome == null ? "Nome: " + nome : null);
+		builder.append(matricula == null ? "Matricula: " + matricula : null);
+		builder.append(email == null ? "Email: " + email : null);
+		throw new DadosProfessorIncompletosException(builder.toString());
 	}
 
 	public String getNome() {
